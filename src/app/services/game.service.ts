@@ -11,7 +11,7 @@ import { Game } from '../interfaces/game';
 })
 export class GameService {
 
-  private apiURL = "https://jsonplaceholder.typicode.com";
+  private apiURL = "http://127.0.0.1:8080";
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -21,7 +21,7 @@ export class GameService {
 
   getAll(): Observable<any> {
 
-    return this.httpClient.get(this.apiURL + '/games/')
+    return this.httpClient.get(this.apiURL + '/jogos')
 
     .pipe(
       catchError(this.errorHandler)
@@ -30,16 +30,16 @@ export class GameService {
 
   create(game: Game): Observable<any> {
 
-    return this.httpClient.post(this.apiURL + '/games/', JSON.stringify(game), this.httpOptions)
+    return this.httpClient.post(this.apiURL + '/jogos/', JSON.stringify(game), this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  find(id:number): Observable<any> {
+  findById(id:number): Observable<any> {
 
-    return this.httpClient.get(this.apiURL + '/games/' + id)
+    return this.httpClient.get(this.apiURL + '/jogos/' + id)
 
     .pipe(
       catchError(this.errorHandler)
@@ -48,7 +48,7 @@ export class GameService {
 
   update(id:number, game:Game): Observable<any> {
 
-    return this.httpClient.put(this.apiURL + '/games/' + id, JSON.stringify(game), this.httpOptions)
+    return this.httpClient.put(this.apiURL + '/jogos/' + id, JSON.stringify(game), this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)
@@ -56,7 +56,7 @@ export class GameService {
   }
 
   delete(id:number){
-    return this.httpClient.delete(this.apiURL + '/games/' + id, this.httpOptions)
+    return this.httpClient.delete(this.apiURL + '/jogos/' + id, this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)

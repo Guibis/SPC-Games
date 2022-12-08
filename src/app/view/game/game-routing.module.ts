@@ -8,9 +8,9 @@ import { ViewComponent } from './view/view.component';
 const routes: Routes = [
   { path: 'game', redirectTo: 'game/index', pathMatch: 'full'},
   { path: 'game/index', component: IndexComponent },
-  { path: 'game/:postId/view', component: ViewComponent },
+  { path: 'game/:gameId/view', component: ViewComponent },
   { path: 'game/create', component: CreateComponent },
-  { path: 'game/:postId/edit', component: EditComponent }
+  { path: 'game/:gameId/edit', component: EditComponent }
 ];
 
 

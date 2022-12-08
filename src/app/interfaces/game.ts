@@ -1,5 +1,9 @@
 export interface Game {
     id: number;
-    title: string;
-    description: string;
+    namej: string;
+    desenvolvedora: string;
+    plataformas: string;
+    lancamento: string;
+    modo: string;
+    nota: number;
 }

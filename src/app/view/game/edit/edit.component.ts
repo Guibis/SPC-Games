@@ -22,22 +22,32 @@ export class EditComponent {
     private gameService: GameService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params['gameId'];
-    this.gameService.find(this.id).subscribe((data: Game) => {
-      this.game = data;
-    });
-
     this.form = new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', Validators.required),
+      namej: new FormControl('', [Validators.required]),
+      desenvolvedora: new FormControl('', Validators.required),
+      plataformas: new FormControl('', Validators.required),
+      lancamento: new FormControl('', Validators.required),
+      modo: new FormControl('', Validators.required),
+      nota: new FormControl('', Validators.required),
     });
+  }
+
+  ngAfterViewInit() {
+    this.load();
   }
 
   get f() {
     return this.form.controls;
+  }
+
+  load() {
+    this.id = this.activatedRoute.snapshot.params['gameId'];
+    this.gameService.findById(this.id).subscribe((data: Game) => {
+      this.form.patchValue(data);
+    });
   }
 
   submit() {

@@ -21,7 +21,7 @@ export class ViewComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['gameId'];
 
-    this.gameService.find(this.id).subscribe((data: Game)=>{
+    this.gameService.findById(this.id).subscribe((data: Game)=>{
       this.game = data;
     });
   }
