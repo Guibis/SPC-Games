@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Atualizar Game</h1>
+
+    <a href="#" routerLink="/game/index" class="btn btn-primary">Voltar</a>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input formControlName="title" id="title" type="text" [(ngModel)]="game.title" class="form-control">
+            <div *ngIf="f['title'].touched && f['title'].invalid" class="alert alert-danger">
+                <div *ngIf="f['title'].errors && f['title'].errors['required']">Título é obrigatório.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <textarea formControlName="description" id="description" type="text" [(ngModel)]="game.description" class="form-control"></textarea>
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Descrição é obrigatória.</div>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Atualizar</button>
+    </form>
+</div>
