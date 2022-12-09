@@ -23,7 +23,7 @@ export class CreateComponent {
   ngOnInit(): void {
     this.form = new FormGroup({
       namej: new FormControl('', [Validators.required]),
-      desenvolvedora: new FormControl('', Validators.required),
+      descricao: new FormControl('', Validators.required),
       plataformas: new FormControl('', Validators.required),
       lancamento: new FormControl('', Validators.required),
       modo: new FormControl('', Validators.required),

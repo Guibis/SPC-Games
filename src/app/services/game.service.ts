@@ -46,9 +46,9 @@ export class GameService {
     )
   }
 
-  update(id:number, game:Game): Observable<any> {
+  update(game:Game): Observable<any> {
 
-    return this.httpClient.put(this.apiURL + '/jogos/' + id, JSON.stringify(game), this.httpOptions)
+    return this.httpClient.put(this.apiURL + '/jogos/', JSON.stringify(game), this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)

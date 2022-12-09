@@ -19,17 +19,17 @@
         <label for="plataformas">Plataformas</label>
         <input formControlName="plataformas" id="plataformas" type="text" class="form-control">
         <div *ngIf="f['plataformas'].touched && f['plataformas'].invalid" class="alert alert-danger">
-          <div *ngIf="f['plataformas'].errors && f['plataformas'].errors['required']">Desenvolvedora é obrigatória.</div>
+          <div *ngIf="f['plataformas'].errors && f['plataformas'].errors['required']">descricao é obrigatória.</div>
         </div>
       </div>
 
       <br>
 
       <div class="form-group">
-        <label for="desenvolvedora">Desenvolvedora</label>
-        <input formControlName="desenvolvedora" id="desenvolvedora" type="text" class="form-control">
-        <div *ngIf="f['desenvolvedora'].touched && f['desenvolvedora'].invalid" class="alert alert-danger">
-          <div *ngIf="f['desenvolvedora'].errors && f['desenvolvedora'].errors['required']">Desenvolvedora é obrigatória.</div>
+        <label for="descricao">Descrição</label>
+        <input formControlName="descricao" id="descricao" type="text" class="form-control">
+        <div *ngIf="f['descricao'].touched && f['descricao'].invalid" class="alert alert-danger">
+          <div *ngIf="f['descricao'].errors && f['descricao'].errors['required']">Descrição é obrigatória.</div>
         </div>
       </div>
 

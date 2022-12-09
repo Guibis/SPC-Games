@@ -6,16 +6,16 @@
   <br>
   <table class="table table-bordered">
     <tr>
-      <th>ID</th>
+      <th width="25px">ID</th>
       <th>Título</th>
-      <th>Desenvolvedora</th>
+      <th>Descrição</th>
       <th>Paltaforma</th>
       <th width="260px">Ação</th>
     </tr>
     <tr *ngFor="let game of games">
       <td>{{ game.id }}</td>
       <td>{{ game.namej }}</td>
-      <td>{{ game.desenvolvedora }}</td>
+      <td>{{ game.descricao }}</td>
       <td>{{ game.plataformas }}</td>
       <a href="#" [routerLink]="['/game/', game.id, 'view']" type="button" class="btn btn-info">Visualizar</a> &nbsp;
       <a href="#" [routerLink]="['/game/', game.id, 'edit']" type="button" class="btn btn-primary">Editar</a> &nbsp;

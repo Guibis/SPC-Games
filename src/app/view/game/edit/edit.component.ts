@@ -26,8 +26,9 @@ export class EditComponent {
 
   ngOnInit(): void {
     this.form = new FormGroup({
+      id: new FormControl('', [Validators.required]),
       namej: new FormControl('', [Validators.required]),
-      desenvolvedora: new FormControl('', Validators.required),
+      descricao: new FormControl('', Validators.required),
       plataformas: new FormControl('', Validators.required),
       lancamento: new FormControl('', Validators.required),
       modo: new FormControl('', Validators.required),
@@ -51,8 +52,7 @@ export class EditComponent {
   }
 
   submit() {
-    console.log(this.form.value);
-    this.gameService.update(this.id, this.form.value).subscribe((res: any) => {
+    this.gameService.update(this.form.value).subscribe((res: any) => {
       this.snackBar.open('Jogo atualizado com sucesso.', 'OK', {
         duration: 3000,
       });
